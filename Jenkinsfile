@@ -12,8 +12,8 @@ pipeline {
                     withCredentials([string(credentialsId: 'dockerhub', variable: 'DOCKERHUB')]) {
                         sh """
                             echo 'Building..'
-                            export DOCKERHUB=${DOCKERHUB}
-                            echo ${DOCKERHUB}
+                            export DOCKERHUB=\$DOCKERHUB
+                            echo \$DOCKERHUB
                         """
                     }
                 }
